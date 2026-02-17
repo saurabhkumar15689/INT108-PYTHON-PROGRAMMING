@@ -1,0 +1,7 @@
+# Basic File Write & Read
+
+with open("sample.txt", "w") as file:
+    file.write("Learning Python daily!")
+
+with open("sample.txt", "r") as file:
+    print(file.read())
