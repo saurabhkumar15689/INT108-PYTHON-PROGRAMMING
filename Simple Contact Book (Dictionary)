@@ -1,0 +1,12 @@
+# Simple Contact Book (Dictionary)
+
+contacts = {}
+
+while True:
+    name = input("Enter name (or exit): ")
+    if name == "exit":
+        break
+    phone = input("Enter phone: ")
+    contacts[name] = phone
+
+print(contacts)
