@@ -1,0 +1,15 @@
+# Expense Tracker
+
+expenses = {}
+
+def add_expense():
+    cat = input("Category: ")
+    amt = float(input("Amount: "))
+    expenses[cat] = expenses.get(cat, 0) + amt
+
+def view_expense():
+    total = 0
+    for c, a in expenses.items():
+        print(c, a)
+        total += a
+    print("Total:", total)
