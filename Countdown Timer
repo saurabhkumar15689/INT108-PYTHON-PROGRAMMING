@@ -1,0 +1,11 @@
+# Countdown Timer
+import time
+
+def countdown(sec):
+    while sec:
+        print(sec)
+        time.sleep(1)
+        sec -= 1
+    print("Time up!")
+
+# countdown(5)
