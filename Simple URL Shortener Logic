@@ -1,0 +1,12 @@
+# Simple URL Shortener Logic
+url_map = {}
+
+
+def shorten(url):
+    key = str(len(url_map) + 1)
+    url_map[key] = url
+    return key
+
+
+def retrieve(key):
+    return url_map.get(key, "Not found")
