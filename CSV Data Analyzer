@@ -1,0 +1,10 @@
+# CSV Data Analyzer
+import csv
+
+def csv_analyzer(file):
+    with open(file, newline="") as f:
+        reader = csv.DictReader(f)
+        rows = list(reader)
+        print("Total rows:", len(rows))
+        if rows:
+            print("Columns:", rows[0].keys())
