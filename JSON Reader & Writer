@@ -1,0 +1,11 @@
+JSON Reader & Writer
+import json
+
+def write_json(data, file="data.json"):
+    with open(file, "w") as f:
+        json.dump(data, f, indent=2)
+
+
+def read_json(file="data.json"):
+    with open(file) as f:
+        return json.load(f)
