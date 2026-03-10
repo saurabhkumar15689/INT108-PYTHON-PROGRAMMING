@@ -1,0 +1,9 @@
+# Weather API Script
+# requires free API key from openweathermap
+import requests
+
+
+def weather(city, api_key):
+    url = f"https://api.openweathermap.org/data/2.5/weather?q={city}&appid={api_key}&units=metric"
+    data = requests.get(url).json()
+    print("Temp:", data["main"]["temp"])
