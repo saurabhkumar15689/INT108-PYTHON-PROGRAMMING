@@ -1,0 +1,17 @@
+# SQLite Database CRUD
+import sqlite3
+
+conn = sqlite3.connect("users.db")
+cur = conn.cursor()
+cur.execute("CREATE TABLE IF NOT EXISTS users(id INTEGER PRIMARY KEY, name TEXT)")
+conn.commit()
+
+
+def add_user(name):
+    cur.execute("INSERT INTO users(name) VALUES(?)", (name,))
+    conn.commit()
+
+
+def view_users():
+    for row in cur.execute("SELECT * FROM users"):
+        print(row)
