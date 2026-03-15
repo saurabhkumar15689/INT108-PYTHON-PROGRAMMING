@@ -1,0 +1,36 @@
+# Final Project: CLI Task Manager with Database
+import sqlite3
+
+conn2 = sqlite3.connect("tasks.db")
+c = conn2.cursor()
+c.execute("CREATE TABLE IF NOT EXISTS tasks(id INTEGER PRIMARY KEY, task TEXT)")
+conn2.commit()
+
+
+def add_task_db(task):
+    c.execute("INSERT INTO tasks(task) VALUES(?)", (task,))
+    conn2.commit()
+
+
+def view_tasks_db():
+    for r in c.execute("SELECT * FROM tasks"):
+        print(r)
+
+
+def delete_task_db(task_id):
+    c.execute("DELETE FROM tasks WHERE id=?", (task_id,))
+    conn2.commit()
+
+
+if __name__ == "__main__":
+    print("CLI Task Manager")
+    while True:
+        ch = input("1.Add 2.View 3.Delete 4.Exit: ")
+        if ch == "1":
+            add_task_db(input("Task: "))
+        elif ch == "2":
+            view_tasks_db()
+        elif ch == "3":
+            delete_task_db(int(input("ID: ")))
+        else:
+            break
