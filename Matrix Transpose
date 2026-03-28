@@ -1,0 +1,9 @@
+# Matrix Transpose
+
+r=int(input())
+c=int(input())
+a=[list(map(int,input().split())) for _ in range(r)]
+for i in range(c):
+    for j in range(r):
+        print(a[j][i],end=" ")
+    print()
