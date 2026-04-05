@@ -1,0 +1,6 @@
+# JSON to Dictionary
+
+import json
+s=input()
+d=json.loads(s)
+print(d)
