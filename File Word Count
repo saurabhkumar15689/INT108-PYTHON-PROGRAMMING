@@ -1,0 +1,5 @@
+# File Word Count
+
+f=open("data.txt")
+text=f.read()
+print(len(text.split()))
