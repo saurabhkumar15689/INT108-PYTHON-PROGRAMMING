@@ -1,0 +1,14 @@
+# Decorator Example
+
+def deco(f):
+    def wrap():
+        print("start")
+        f()
+        print("end")
+    return wrap
+
+@deco
+def hello():
+    print("hello")
+
+hello()
