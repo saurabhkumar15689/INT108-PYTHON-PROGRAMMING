@@ -1,0 +1,10 @@
+# Multiprocessing Example
+
+from multiprocessing import Process
+
+def f():
+    print("process running")
+
+p=Process(target=f)
+p.start()
+p.join()
