@@ -1,0 +1,10 @@
+# Thread Example
+
+import threading
+
+def f():
+    print("thread running")
+
+t=threading.Thread(target=f)
+t.start()
+t.join()
