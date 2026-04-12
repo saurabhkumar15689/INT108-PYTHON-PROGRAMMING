@@ -1,0 +1,6 @@
+# Regex Email Extractor
+
+import re
+text=input()
+emails=re.findall(r'\S+@\S+',text)
+print(emails)
