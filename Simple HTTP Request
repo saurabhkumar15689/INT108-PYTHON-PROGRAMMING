@@ -1,0 +1,6 @@
+# Simple HTTP Request
+
+import requests
+url=input()
+r=requests.get(url)
+print(r.status_code)
